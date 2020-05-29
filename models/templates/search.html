@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='search.css')}}">
+    <title>TEDX TALKS</title>
+</head>
+<body>
+    <form method="post" action="">
+    <div class="container">
+        <div class="row">
+            <img src="http://tedx.anthonygoddard.com/TEDxName5.png">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12">
+                                    <input type="text" class="  search-query form-control" name="query" placeholder="Search TEdx Talk" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="submit">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+        </div>
+    </div>
+    </form>
+    
+
+    {% for url in urls%}
+    <li>
+        <a href="{{url}}">{{url}}</a>
+    </li>    
+    
+    {% endfor %}
+    
+    
+</body>
+</html>
